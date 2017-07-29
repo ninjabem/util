@@ -18,6 +18,7 @@ sudo apt-get install --assume-yes \
     git \
     tig \
     emacs24 \
+    curl \
     tmux \
     sublime-text-installer \
     openjdk-8-jdk \
@@ -41,4 +42,10 @@ echo "source $HOME/.bash_lol" >> $HOME/.bashrc
 cd util/init/ubuntu
 cp .bash_lol_secrets ~
 cp .bash_lol ~
+popd
+
+pushd $BIN
+INT=intellij.tar.gz
+curl --location 'https://data.services.jetbrains.com/products/download?code=IIU&platform=linux' > $INT
+tar xfz $INT
 popd

@@ -4,4 +4,4 @@ set -o nounset -o errexit
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt autoremoce
+sudo apt autoremove
