@@ -35,7 +35,7 @@ mkdir $WORK
 ssh-keygen -t rsa -b 4096 -N "" -f $HOME/.ssh/id_rsa
 
 pushd $WORK
-git clone https://github.com:ninjabem/util.git
+git clone https://github.com/ninjabem/util.git
 echo "source $HOME/.bash_lol_secrets" >> $HOME/.bashrc
 echo "source $HOME/.bash_lol" >> $HOME/.bashrc
 cd util/init/ubuntu
