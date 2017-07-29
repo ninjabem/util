@@ -1,0 +1,27 @@
+export HISTIGNORE=' *'
+
+## PATH
+export MY_BIN=$HOME/bin
+export PATH=$MY_BIN:$PATH
+
+#### aliases
+alias refresh="source $HOME/.bash_profile"
+alias pwgen='pwgen 15 -yB'
+alias ll='ls -lh'
+alias la='ls -a'
+alias serv='python -m SimpleHTTPServer'
+alias json='python -m json.tool'
+alias find='find . -name'
+alias md5sum='md5'
+
+## GIT aliases ##
+alias gs='git status'
+alias gd='git diff'
+alias gb='git branch'
+alias fet='git fetch origin'
+alias gco='git checkout'
+alias ga='git add'
+alias gc='git commit'
+
+## SBT
+alias sbtd='sbt -jvm-debug 5005'
