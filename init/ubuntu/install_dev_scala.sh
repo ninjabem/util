@@ -27,6 +27,7 @@ sudo apt-get install --assume-yes \
     secure-delete \
     pwgen
 
+# SBT :-((
 sudo apt-get install --assume-yes \
     sbt
 
@@ -46,6 +47,6 @@ popd
 
 pushd $BIN
 INT=intellij.tar.gz
-curl --location 'https://data.services.jetbrains.com/products/download?code=IIU&platform=linux' > $INT
+curl --location 'https://data.services.jetbrains.com/products/download?code=IIC&platform=linux' > $INT
 tar xfz $INT
 popd
