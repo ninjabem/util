@@ -2,9 +2,11 @@
 
 set -o nounset -o errexit
 
+# https://hub.docker.com/r/jupyter/datascience-notebook/
+# docker pull jupyter/datascience-notebook
+NOTEBOOK=jupyter/datascience-notebook
 HOST_PORT=8888
 CONTAINER_PORT=8888
-NOTEBOOK=jupyter/datascience-notebook
 
 echo
 echo "==========================="

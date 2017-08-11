@@ -2,9 +2,11 @@
 
 set -o nounset -o errexit
 
+# https://hub.docker.com/r/jupyter/jupyter/tensorflow-notebook/
+# docker pull jupyter/tensorflow-notebook
+NOTEBOOK=jupyter/tensorflow-notebook
 HOST_PORT=7777
 CONTAINER_PORT=8888
-NOTEBOOK=jupyter/tensorflow-notebook
 
 echo
 echo "==========================="

@@ -2,9 +2,11 @@
 
 set -o nounset -o errexit
 
+# https://hub.docker.com/r/jupyter/all-spark-notebook
+# docker pull jupyter/all-spark-notebook
+NOTEBOOK=jupyter/all-spark-notebook
 HOST_PORT=5555
 CONTAINER_PORT=8888
-NOTEBOOK=jupyter/all-spark-notebook
 
 echo
 echo "==========================="
