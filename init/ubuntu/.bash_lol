@@ -6,7 +6,7 @@ export PATH=$MY_BIN:$PATH
 
 #### aliases
 alias refresh="source $HOME/.bash_profile"
-alias pwgen='pwgen 15 -yB'
+alias pwgen='pwgen 50 -yB'
 alias ll='ls -lh'
 alias la='ls -a'
 alias serv='python -m SimpleHTTPServer'
