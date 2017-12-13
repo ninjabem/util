@@ -7,7 +7,10 @@ PORT=58485
 
 echo "listening on port $PORT and writing to file $FILE"
 
-nc -l -p $PORT > $FILE
+# OS X
+nc -l $PORT > $FILE
+# *nix
+# nc -l -p $PORT > $FILE
 
 echo "DONE"
 
