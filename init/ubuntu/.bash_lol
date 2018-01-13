@@ -13,6 +13,7 @@ alias serv='python -m SimpleHTTPServer'
 alias json='python -m json.tool'
 alias find='find . -name'
 alias md5sum='md5'
+alias emacs='emacs -nw'
 
 ## GIT aliases ##
 alias gs='git status'
