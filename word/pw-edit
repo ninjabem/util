@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Gets the storage directory, etc from the config
+source ~/.assconfig
+
+if [ $# -lt 1 ]; then
+    echo "Error: Not enough arguments. Usage: $0 <service_name>"
+    exit 1
+fi
+
+pushd $DIR
+service=$1
+full_name=$service.asc
+
+# Make a backup copy
+current_datetime=$(date +'%Y-%m-%d_%H%M%S')
+cp $full_name $full_name.$current_datetime.bak
+
+# Decrypt the file
+gpg --output $service --decrypt $full_name
+# Edit the decrypted version
+$EDITOR $service
+
+# Encrypt the edited version to recipient: $KEY_ID
+gpg --encrypt --sign --armor \
+	-r $KEY_ID \
+	$service
+
+# Delete the unencrypted scratch file
+rm $service
+popd

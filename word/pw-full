@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Gets the storage directory, etc from the config
+source ~/.assconfig
+
+# If you don't pass args, then it lists the existing files
+if [ $# -lt 1 ]; then
+    services=$(ls -1 $DIR | cut -d'.' -f1 | sort | uniq)
+    echo $services
+    exit 0
+fi
+
+# Go to the storage directory
+pushd $DIR > /dev/null
+service=$1
+full_name=$service.asc
+
+# Decrypt the file, silence any extra outputs
+gpg -q --decrypt $full_name 2>/dev/null
+
+popd > /dev/null

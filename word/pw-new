@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Gets the storage directory, etc from the config
+source ~/.assconfig
+
+if [ $# -lt 1 ]; then
+    echo "Error: Not enough arguments. Usage: $0 <service_name>"
+    exit 1
+fi
+
+pushd $DIR
+service=$1
+
+# Edit a new file
+$EDITOR $service
+
+# Encrypt the edited version to recipient: $KEY_ID
+gpg --encrypt --sign --armor \
+	-r $KEY_ID \
+	$service
+
+# Delete the unencrypted scratch file
+rm $service
+popd
